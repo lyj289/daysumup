@@ -1,0 +1,6 @@
+常用命令
+- tldr 简版man,更方便查看命令常用用法
+- ack  grep-like text finder
+- fd   简单、快捷，可替换find
+- jq   json pretty for CLI
+- cheat 命令备忘录

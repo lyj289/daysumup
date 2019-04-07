@@ -1,0 +1,14 @@
+# cmd new connect 
+mongo host:27018/dbname
+
+# inline code connect, eg: php, nodejs
+mongodb://host:27018
+
+# create index
+db.intelligence.ensureIndex({"mbr":"2dsphere"},{background:true})
+
+# setSlave
+db.getMongo().setSlaveOk()
+
+# export 
+mongoexport -h host --port=27018 -d turing -c intelligence_edit --type=json -q '{"iid":{$in:["587355de0b4c15e57b3c9cca","587ca89c0b4c1503373ca2c7"]}}' -o ./crossexam_edit.dat

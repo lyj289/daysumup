@@ -1,0 +1,44 @@
+# see more: /Users/liyujian/Desktop/pgsql.txt
+
+# psql is the PostgreSQL terminal interface. The following commands were tested on version 9.5.
+# Connection options:
+# -U username (if not specified current OS user is used).
+# -p port.
+# -h server hostname/address.
+
+# Connect to a specific database:
+psql -U postgres -h serverAddress -d dbName
+
+# Get databases on a server:
+psql -U postgres -h serverAddress --list
+
+# Execute sql query and save output to file:
+psql -U postgres -d dbName -c 'select * from tableName;' -o fileName
+
+# Execute query and get tabular html output:
+psql -U postgres -d dbName -H -c 'select * from tableName;'
+
+# Execute query and save resulting rows to csv file:
+psql -U postgres -d dbName -t -A -P fieldsep=',' -c 'select * from tableName;' -o fileName.csv
+
+# Read commands from file:
+psql -f fileName
+
+# Restore databases from file:
+psql -f fileName.backup postgres
+
+# 删表
+DROP TABLE IF EXISTS back_city;
+
+# 重命名表
+alter table back_city rename to back_city2;
+
+# 删除库
+DROP DATABASE IF EXISTS "release_107.0_bound";
+
+# 重命名
+ALTER DATABASE release_new_bound RENAME TO "release_87.0_bound";
+
+# 建立索引
+CREATE INDEX back_prov_gix ON back_prov USING GIST (geom);
+create index nav_link_kind on nav_link using btree(kind);

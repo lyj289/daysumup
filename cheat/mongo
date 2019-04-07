@@ -1,5 +1,16 @@
+# see more: /Users/liyujian/Desktop/mongo.js
+
 # cmd new connect 
 mongo host:27018/dbname
+
+## dev
+mongo sh01-map-daqi-edit00.sh01.baidu.com:27018
+
+## online
+mongo 10.123.150.25:27018/turing
+
+## preonline
+mongo 10.114.132.34:28013/turing_preonline
 
 # inline code connect, eg: php, nodejs
 mongodb://host:27018

@@ -1,0 +1,31 @@
+# shell script
+
+#!/bin/bash
+help(){
+    echo "shell description"
+    echo "Usage: $0 [OPTION] dbname"
+    echo "  -m       the host mode"
+    echo "  -f       the sql file"
+    echo "  -h       help"
+    exit
+}
+
+if [ $# -eq 0 ];then
+    help                    #当没有传入参数显示help信息
+fi
+
+while getopts :m:h:f: opt
+do
+    case $opt in
+        f) 
+            file_dir=$OPTARG ;;
+        h)  help ;;
+        *)  help ;;              #当传入其它参数显示help信息
+    esac
+done && shift "$((OPTIND-1))"
+
+# [[ -z "$file_dir" ]] && help    #当-f传入的参数为空，显示help信息
+
+# 获取后面的参数
+echo $1 # dbname
+

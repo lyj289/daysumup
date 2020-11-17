@@ -11,6 +11,7 @@
 
 ### shell
 - shell `shp2pg.sh` 将shp文件导入pg
+- shell `quickinstall.sh` 快速安装并配置tool
 
 ### python
 - `arg.sh` arg解析脚本模板

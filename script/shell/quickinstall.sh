@@ -8,8 +8,8 @@ curl https://beyondgrep.com/ack-v3.0.0 > ~/bin/ack && chmod 0755 ~/bin/ack
 # todo
 # install jq, fd
 
-# install cheat
-pip install cheat
+# install cheat with Go
+go get -u github.com/cheat/cheat/cmd/cheat
 
 # 2.setting
 
